@@ -1,0 +1,113 @@
+/* FONTS */
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+
+/* RESET */
+
+* {
+    padding: 0;
+    margin: 0;
+    font-size: 100%;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+ul { list-style: none; }
+a { text-decoration: none; opacity: .83;  }
+a:hover { opacity: 1; }
+
+
+/* PAGE STYLE */
+
+body { background-color: #eee; }
+
+header {
+    background-color: #fff;
+    width: 100%;
+    padding: 0 30px;
+    box-shadow: 0 1px 10px rgba(0, 0, 0, .3);
+}
+
+
+/* NAVBAR COLLAPSE */
+
+.navbar-collapse {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-brand img { max-width: 200px; }
+
+.navbar-collapse .nav-items { display: flex; }
+
+.navbar-collapse .nav-items li a {
+    margin: 0 15px;
+    font-size: .9rem;
+    color: rgba(0, 0, 0, .8);
+    text-transform: uppercase;
+    transition: color .2s;
+}
+
+.navbar-collapse .nav-items li a:hover { color: #377eb0; }
+
+
+/* NAVBAR COLLAPSE BUTTON */
+
+.navbar-collapse #checkbox-collapse {
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+}
+
+.navbar-collapse #checkbox-collapse + .btn-collapse span {
+    display: block;
+    width: 20px;
+    padding: 3px 0;
+    border-bottom: 2px solid #333;
+}
+
+.navbar-collapse .btn-collapse {
+    display: none;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.navbar-collapse #checkbox-collapse:checked + .btn-collapse span {
+    border-color: #377eb0;
+}
+
+
+/* MEDIA QUERY */
+
+@media (max-width: 820px) {
+    header {
+        padding: 0 15px;
+    }
+    
+    .navbar-collapse {
+        flex-wrap: wrap;
+    }
+    
+    .navbar-collapse .nav-items {
+        overflow: hidden;
+        max-height: 0;
+        width: 100%;
+        flex-direction: column;
+        transition: all .5s;
+    }
+
+    .navbar-collapse .nav-items li {
+        margin: 5px 0;
+    }
+
+    .navbar-collapse .btn-collapse {
+        display: block;
+    }
+
+    .navbar-collapse #checkbox-collapse:checked + .btn-collapse + .nav-items {
+        max-height: 140px;
+        padding-bottom: 10px;
+    }
+}
