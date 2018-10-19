@@ -26,6 +26,8 @@ header {
     background-color: #fff;
     width: 100%;
     padding: 0 30px;
+    -webkit-box-shadow: 0 1px 10px rgba(0, 0, 0, .3);
+    -moz-box-shadow: 0 1px 10px rgba(0, 0, 0, .3);
     box-shadow: 0 1px 10px rgba(0, 0, 0, .3);
 }
 
@@ -47,6 +49,7 @@ header {
     font-size: .9rem;
     color: rgba(0, 0, 0, .8);
     text-transform: uppercase;
+    -webkit-transition: color .2s;
     transition: color .2s;
 }
 
@@ -95,11 +98,16 @@ header {
         max-height: 0;
         width: 100%;
         flex-direction: column;
-        transition: all .5s;
+        -webkit-transition: max-height .5s;
+        transition: max-height .5s;
     }
 
     .navbar-collapse .nav-items li {
         margin: 5px 0;
+    }
+
+    .navbar-collapse .nav-items li:last-child {
+        padding-bottom: 10px;
     }
 
     .navbar-collapse .btn-collapse {
@@ -108,6 +116,5 @@ header {
 
     .navbar-collapse #checkbox-collapse:checked + .btn-collapse + .nav-items {
         max-height: 140px;
-        padding-bottom: 10px;
     }
 }
